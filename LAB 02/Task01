@@ -1,0 +1,57 @@
+#include<iostream>
+using namespace std;
+
+struct Book{
+    string title;
+    string author;
+    int year;
+};
+
+void booksInput(Book *books,int n){
+    for(int i=0; i<n; i++){
+        cout<<"Enter details of book "<<i+1<<":"<<endl;
+        cout<<"Enter title:";
+        cin.ignore();
+        getline(cin, books[i].title);
+        cout<<"Enter author's name:";
+        getline(cin, books[i].author);
+        cout<<"Enter publification year:";
+        cin>>books[i].year;
+    }
+}
+
+void booksDisplayAfterSpecificYear(Book *books, int n){
+    int speciYear, found=0;
+    cout<<"Enter the year to display books after that year: "<<endl;
+    cin>>speciYear;
+
+    cout<<"Books/book published after "<<speciYear<<":"<<endl;
+    for(int i=0; i<n; i++){
+        if(books[i].year>speciYear)
+        {
+            cout<<"Title: "<<books[i].title<<endl;
+            cout<<"Author: "<<books[i].author<<endl;
+            cout<<"Publication year: "<<books[i].year<<endl;
+            found=1;
+        }
+    }
+    if(!found){
+        cout<<"None of the books were published after "<<speciYear<<"year."<<endl;
+    }
+}
+
+int main(){
+
+    int n;
+
+    cout<<"Enter the number of books you want to enter: "<<endl;
+    cin>>n;
+
+    Book *books = new Book[n];
+
+    booksInput(books,n);
+    booksDisplayAfterSpecificYear(books,n);
+    delete[] books;
+    return 0;
+}
+
