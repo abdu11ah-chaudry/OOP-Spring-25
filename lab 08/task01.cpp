@@ -27,8 +27,8 @@ public:
     }
 
     Complex operator /(Complex c){
-        double denominator =c.real*c.real + c.imag*c.imag;
-        return Complex((real*c.real + imag*c.imag) / denominator, (imag*c.real - real*c.imag)/denominator);
+        double denominator = c.real * c.real + c.imag * c.imag;
+        return Complex((real * c.real + imag * c.imag) / denominator,(imag * c.real - real * c.imag) / denominator);
     }
 
     friend ostream& operator<<(ostream& output, Complex c);
@@ -37,6 +37,7 @@ public:
 
 ostream& operator<<(ostream& output, Complex c){
     output<<"Complex Number: "<<c.real<<(c.imag>0? " +":" -")<<abs(c.imag)<<"i"<<endl;
+    return output;
 }
 
 double magnitude(Complex& c){
@@ -64,4 +65,3 @@ int main(){
 
     return 0;
 }
-
