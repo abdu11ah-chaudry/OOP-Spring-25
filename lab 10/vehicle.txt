@@ -1,0 +1,4 @@
+// Vehicle Database 
+Autonomous Car, AC101, RoboTaxi, 2023, SW:4.5, CERT-AI 
+ElectricVehicle, EV202, Voltz, 2022, Battery: 150, CERT-ECO 
+Hybrid Truck, HT303, GreenHauler, 2021, Cargo: 5000 | Battery: 75, CERT-HYBRID 
